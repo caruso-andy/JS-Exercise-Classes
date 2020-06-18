@@ -58,11 +58,12 @@ class Person {
     return `${this.name}, ${this.age}`;
   }
 }
-const personOne = new Person({
-  name: 'Mary',
-  age: 50,  
-});
-console.log(personOne.toString());
+//Testing a new person -- Works
+// const personOne = new Person({
+//   name: 'Mary',
+//   age: 50,  
+// });
+// console.log(personOne.toString());
 
 
 
@@ -82,9 +83,21 @@ console.log(personOne.toString());
 */
 
 class Car {
-
+  constructor(model, milesPerGallon){
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  }
+  fill(gallons){
+    return this.tank += gallons;
+  }
+  drive(distance){
+    return this.odometer += distance;
+  }
 }
-
+const tripOne = new Car('Civic', 30);
+console.log(tripOne.odometer);
 /*
   TASK 3
     - Write a Lambdasian class.
